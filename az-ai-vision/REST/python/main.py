@@ -8,7 +8,8 @@ def main():
     load_dotenv()
     # read endpoint and api key from the .env
     # alternatively endpoint and api key can be in host environment variable
-    ai_endpoint = os.getenv('ENDPOINT_URI')
+    ai_endpoint = os.getenv('ENDPOINT_URI').rstrip('/')
+    print(ai_endpoint)
     ai_key = os.getenv('API_KEY')
      
     # url for the image to be analyze
@@ -28,13 +29,13 @@ def main():
     'language': 'en',
     }
 
-    response = requests.post(f"{ai_endpoint}/vision/v3.0/analyze?objects", headers=headers, json=url_data)
+    # send to Azure Cognitive Services, API Vision Version 3.2
+    response = requests.post(f"{ai_endpoint}/vision/v3.2/analyze?objects", headers=headers, json=url_data)
     if response.status_code == 200:
         data = response.json()
         print(data)
     else:
         print(f'Error: {response.json()} ')
-
 
 
 if __name__ == '__main__':
