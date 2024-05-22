@@ -1,6 +1,6 @@
 # Azure AI Vision Services
 
-
+[Azure AI Vision Documentation](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/)
 [Azure AI Vision API Documentation](https://eastus.dev.cognitive.microsoft.com/docs/services/unified-vision-apis-public-preview-2023-04-01-preview/operations/61d65934cd35050c20f73ab6)
 
 
@@ -44,3 +44,10 @@ except Exception as e:
 
 ####################################
 ```
+
+## AI Vision Python SDK
+
+[Azure Image Analysis client library for Python](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-vision-imageanalysis-readme?view=azure-python-preview)
+
+## AI Vision C# SDK
+[Azure Image Analysis client library for .NET](https://learn.microsoft.com/en-us/dotnet/api/overview/azure/ai.vision.imageanalysis-readme?view=azure-dotnet-preview)

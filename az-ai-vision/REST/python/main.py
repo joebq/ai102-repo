@@ -5,12 +5,16 @@ from dotenv import load_dotenv
 
 
 def main():
-    load_dotenv()
-    # read endpoint and api key from the .env
-    # alternatively endpoint and api key can be in host environment variable
-    ai_endpoint = os.getenv('ENDPOINT_URI').rstrip('/')
-    print(ai_endpoint)
-    ai_key = os.getenv('API_KEY')
+    try:
+        load_dotenv()
+        # read endpoint and api key from the .env
+        # alternatively endpoint and api key can be in host environment variable
+        ai_endpoint = os.getenv('ENDPOINT_URI').rstrip('/')
+        ai_key = os.getenv('API_KEY')
+    except:
+        print("Missing environment variables API_KEY and/or ENDPOINT URI")
+        print("Ensure environment variables are present before running program")
+        exit()
      
     # url for the image to be analyze
     url_data = {
